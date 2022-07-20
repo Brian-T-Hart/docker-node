@@ -1,0 +1,14 @@
+version: "2.6.1"
+services:
+  app:
+    image: node:16
+    command: sh -c "yarn install && yarn start"
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+
+volumes:
+  docker-node:
